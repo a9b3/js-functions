@@ -18,17 +18,23 @@ const convertToTokens = {
     return tokens
   },
 }
-const ALLOWED_TYPES = Object.keys(convertToTokens)
+const ALLOWED_FROM = Object.keys(convertToTokens)
+
+const tokensToCase = {
+  constant: (tokens) => {
+    return tokens.map(t => t.split('').map(c => c.toUpperCase()).join('')).join('_')
+  },
+}
+const ALLOWED_TO = Object.keys(tokensToCase)
 
 export default function caseConversion(str, from, to) {
-  if (ALLOWED_TYPES.indexOf(from) === -1) {
-    throw new Error(`${from} should be one of ${ALLOWED_TYPES}`)
+  if (ALLOWED_FROM.indexOf(from) === -1) {
+    throw new Error(`argument '${from}' should be one of ${ALLOWED_FROM}`)
   }
-  if (ALLOWED_TYPES.indexOf(to) === -1) {
-    throw new Error(`${to} should be one of ${ALLOWED_TYPES}`)
+  if (ALLOWED_TO.indexOf(to) === -1) {
+    throw new Error(`argument '${to}' should be one of ${ALLOWED_TO}`)
   }
 
   const tokens = convertToTokens[from](str)
-  console.log(tokens)
-  return str
+  return tokensToCase[to](tokens)
 }
