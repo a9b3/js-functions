@@ -1,6 +1,6 @@
 {
   "name": "bagofjs",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
