@@ -1,5 +1,5 @@
-function isCapital(char) {
-  return char === char.toUpperCase()
+function isCapital(ch) {
+  return ch === ch.toUpperCase()
 }
 
 const convertToTokens = {
