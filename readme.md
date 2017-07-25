@@ -1,7 +1,7 @@
-# Bag of JS
+# JS Functions
 
 Generic javascript utility functions.
 
 ```
-yarn add bagofjs --save
+yarn add js-functions --save
 ```
