@@ -15,7 +15,7 @@
  * You can use this to display example code without aligning your text against
  * the left.
  */
-export default function alignText(str) {
+export default function alignText(str = '') {
   const lines = str.split('\n')
   const ret = lines.slice(1, lines.length - 1)
   const leadingSpaces = getLeadingSpaces(lines[1])
